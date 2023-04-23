@@ -55,4 +55,7 @@ xkb_symbols "basic" {
     key <BKSL> {[backslash, bar]};
 
     key <CAPS> {[ISO_Level3_Shift]};
+
+    key <LFSH> {[Shift_L, Caps_Lock]};
+    key <RTSH> {[Shift_R, Caps_Lock]};
 };
