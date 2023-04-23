@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for x in ls home/*
+for x in `ls -1 home`
 do cp -v home/$x ~/.$x
 done
 
