@@ -1,3 +1,8 @@
+if grep -q -F 'Arch Linux' /etc/issue
+then distro='arch'
+else distro='debian'
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -15,4 +20,26 @@ eval "$(dircolors -b)"
 alias ls='ls --color=auto'
 alias s='sudo'
 
-. /etc/bash_completion
+if test $distro = 'arch'
+then
+    a() {
+        arg="$1"
+        shift 1
+        case "$arg" in
+            s) pacman -Ss --color auto "$@" ;;
+            i) s pacman -S --color auto "$@" ;;
+            r) s pacman -Rns --color auto "$@" ;;
+            update) s pacman -Sy --color auto ;;
+            upgrade) s pacman -Su --color auto ;;
+            info) pacman -Sii --color auto "$@" ;;
+            depends) pacman -Sii --color auto "$@" | grep 'Depends On' ;;
+            rdepends) pacman -Sii --color auto "$@" | grep "Required By" ;;
+            clean) s pacman -Scc --color auto ;;
+            file-search) pacman -Fs --color auto "$@" ;;
+            installed) pacman -Qe --color auto ;;
+            size) LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h ;;
+        esac
+    }
+elif test $distro = 'debian'
+then . /etc/bash_completion
+fi
