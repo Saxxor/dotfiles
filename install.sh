@@ -11,6 +11,9 @@ done
 #do cp -vr config/$x ~/.config 
 #done
 
+# vscode
+cp Workspaces ~/
+
 # xkb (as root)
 sudo cp -v keyboard/sakis /usr/share/X11/xkb/symbols
 sudo cp -v keyboard/evdev.xml /usr/share/X11/xkb/rules/evdev.xml
