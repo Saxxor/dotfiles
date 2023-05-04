@@ -7,9 +7,9 @@ done
 
 
 # config (~/.config)
-for x in `ls -1 config`
-do cp -vr config/$x ~/.config 
-done
+#for x in `ls -1 config`
+#do cp -vr config/$x ~/.config 
+#done
 
 # xkb (as root)
 sudo cp -v keyboard/sakis /usr/share/X11/xkb/symbols
