@@ -19,7 +19,7 @@ eval "$(dircolors -b)"
 
 alias ls='ls --color=auto'
 alias s='sudo'
-alias update='sudo apt update && sudo apt full-upgrade'
+alias update='a update && a upgrade'
 
 if test $distro = 'arch'
 then
@@ -42,5 +42,14 @@ then
         esac
     }
 elif test $distro = 'debian'
-then . /etc/bash_completion
+then
+    a() {
+        arg="$1"
+        shift 1
+        case "$arg" in
+            update) s apt update ;;
+            upgrade) s apt full-upgrade ;;
+        esac
+    }
+    . /etc/bash_completion
 fi
