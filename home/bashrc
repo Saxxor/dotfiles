@@ -14,5 +14,6 @@ eval "$(dircolors -b)"
 
 alias ls='ls --color=auto'
 alias s='sudo'
+alias update='sudo apt update && sudo apt full-upgrade'
 
 . /etc/bash_completion
