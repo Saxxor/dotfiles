@@ -13,6 +13,8 @@ done
 
 # vscode
 ln -svf $(realpath Workspaces) ~/
+mkdir -p ~/.config/'Code - OSS'/User
+ln -svf $(realpath vs-code/settings.json) ~/.config/'Code - OSS'/User
 
 # xkb (as root)
 sudo cp -v keyboard/sakis /usr/share/X11/xkb/symbols
