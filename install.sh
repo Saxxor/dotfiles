@@ -2,7 +2,7 @@
 
 # home (~)
 for x in `ls -1 home`
-do cp -v home/$x ~/.$x
+do ln -svf $(realpath home/$x) ~/.$x
 done
 
 
@@ -12,7 +12,7 @@ done
 #done
 
 # vscode
-cp Workspaces ~/
+ln -sf Workspaces ~/
 
 # xkb (as root)
 sudo cp -v keyboard/sakis /usr/share/X11/xkb/symbols
