@@ -12,7 +12,7 @@ done
 #done
 
 # vscode
-ln -sf Workspaces ~/
+ln -svf $(realpath Workspaces) ~/
 
 # xkb (as root)
 sudo cp -v keyboard/sakis /usr/share/X11/xkb/symbols
