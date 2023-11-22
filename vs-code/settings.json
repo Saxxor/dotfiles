@@ -7,5 +7,8 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "update.showReleaseNotes": false,
     "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "files.simpleDialog.enable": true,
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false
 }
