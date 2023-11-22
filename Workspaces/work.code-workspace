@@ -1,7 +1,11 @@
 {
-    "folders": [
+	"folders": [
 		{
 			"path": "../Projects/phi3d"
+		},
+		{
+			"path": "../Projects/phi-site"
 		}
-	]
+	],
+	"settings": {}
 }
